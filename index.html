@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe CPU Loop Demo</title>
+  </head>
+  <body>
+    <h1>Iframe Infinite Loop Demo</h1>
+    <p>
+      The iframe below will attempt to run an infinite while loop. In modern
+      browsers, this may cause high CPU usage and potentially crash the iframe
+      process independently.
+    </p>
+
+    <iframe
+      src="infinite-loop.html"
+      width="600"
+      height="300"
+      sandbox="allow-scripts"
+    ></iframe>
+
+    <p>
+      You can monitor your browser performance to see the CPU behavior, but be
+      cautious as it could make the iframe unresponsive or crash.
+    </p>
+  </body>
+</html>

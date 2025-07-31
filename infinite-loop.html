@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Loop</title>
+  </head>
+  <body>
+    <script>
+      let start = false;
+      setTimeout(() => {
+        while (true) {
+          console.log("start");
+        }
+      }, 5000);
+      // Infinite loop consuming CPU
+    </script>
+    <p>
+      If you see this message, it means the script hasn't blocked the browser
+      yet.
+    </p>
+  </body>
+</html>
