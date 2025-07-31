@@ -7,16 +7,38 @@
   </head>
   <body>
     <script>
-      setTimeout(() => {
+      // Multiple aggressive infinite loops to crash the host page
+      
+      // Loop 1: CPU intensive calculations
+      setInterval(() => {
         while (true) {
-          console.log("start");
+          Math.pow(Math.random(), Math.random());
         }
-      }, 5000);
-      // Infinite loop consuming CPU
+      }, 1);
+      
+      // Loop 2: Memory allocation
+      setInterval(() => {
+        while (true) {
+          new Array(1000000).fill(Math.random());
+        }
+      }, 1);
+      
+      // Loop 3: DOM manipulation
+      setInterval(() => {
+        while (true) {
+          document.body.innerHTML += '<div>' + Math.random() + '</div>';
+        }
+      }, 1);
+      
+      // Loop 4: Immediate infinite loop
+      while (true) {
+        console.log("CRASH ATTEMPT");
+        Math.sqrt(Math.random() * 1000000);
+      }
     </script>
     <p>
-      If you see this message, it means the script hasn't blocked the browser
-      yet.
+      This page is designed to crash the browser. If you see this message, 
+      the crash hasn't happened yet.
     </p>
   </body>
 </html>
